@@ -1,0 +1,60 @@
+<template>
+  <transition name="fade">
+    <div v-if="show" class="preloader">
+      <div class="divimg">
+        <img class="logo" :src="image" />
+      </div>
+      <RollerLoader :color="'#E50931'" />
+    </div>
+  </transition>
+</template>
+
+<script>
+import RollerLoader from "@bit/joshk.vue-spinners-css.roller-loader";
+
+import image from "../assets/logo-big.png";
+export default {
+  name: "Preloader",
+  data() {
+    return {
+      show: true,
+      image: image
+    };
+  },
+  mounted() {
+    if (this.show) this.showToggle();
+  },
+  components: {
+    RollerLoader
+  },
+  methods: {
+    showToggle() {
+      setTimeout(() => {
+        this.show = false;
+      }, 4000);
+    }
+  }
+};
+</script>
+
+<style>
+.preloader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #141414;
+  z-index: 9999;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#pulseColor {
+  color: yellow;
+}
+</style>
