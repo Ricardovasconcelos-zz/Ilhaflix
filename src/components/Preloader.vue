@@ -1,8 +1,8 @@
 <template>
   <transition name="fade">
     <div v-if="show" class="preloader">
-      <div class="divimg">
-        <img class="logo" :src="image" />
+      <div class="divImg">
+        <img class="logoPreloader" :src="image" />
       </div>
       <RollerLoader :color="'#E50931'" />
     </div>
@@ -49,12 +49,17 @@ export default {
   background-color: #141414;
   z-index: 9999;
 }
-.logo {
+.divImg {
+  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#pulseColor {
-  color: yellow;
+
+@media only screen and (max-width: 900px) {
+  .logoPreloader {
+    width: 200px;
+  }
 }
 </style>

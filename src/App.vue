@@ -1,15 +1,18 @@
 <template>
   <div id="app">
     <Preloader />
+    <Header />
   </div>
 </template>
 
 <script>
 import Preloader from "./components/Preloader";
+import Header from "./components/Header";
 export default {
   name: "App",
   components: {
-    Preloader
+    Preloader,
+    Header
   }
 };
 </script>
@@ -20,5 +23,8 @@ export default {
   padding: 0;
   outline: 0;
   box-sizing: border-box;
+}
+body {
+  background-color: #141414;
 }
 </style>
