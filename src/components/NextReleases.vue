@@ -26,7 +26,7 @@
 import Icon from "vue-awesome/components/Icon";
 export default {
   name: "NextRealeses",
-  data() {
+  data() { 
     return {};
   },
   components: {
