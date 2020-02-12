@@ -66,7 +66,7 @@ export default {
 #header {
   width: 100%;
   height: 30%;
-  background-color: #141414;
+  background: #141414;
   display: flex;
   align-items: center;
 }
@@ -123,6 +123,9 @@ ul li ul {
 ul li ul li {
   clear: both;
   width: 100%;
+}
+.dropdown {
+  background: #141414c7;
 }
 #navigate {
   opacity: 0;
@@ -182,8 +185,9 @@ input[type="text"]:focus {
     opacity: 1;
     display: block;
     font-size: 15px;
+    position: absolute;
+    z-index: 9999;
   }
-
   li :hover {
     color: #ccc;
   }

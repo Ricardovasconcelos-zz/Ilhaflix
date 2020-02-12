@@ -1,19 +1,11 @@
 <template>
   <div id="app">
-    <Preloader />
-    <Header />
+    <router-view></router-view>
   </div>
 </template>
-
 <script>
-import Preloader from "./components/Preloader";
-import Header from "./components/Header";
 export default {
-  name: "App",
-  components: {
-    Preloader,
-    Header
-  }
+  name: "App"
 };
 </script>
 
@@ -26,5 +18,6 @@ export default {
 }
 body {
   background-color: #141414;
+  height: 100vh;
 }
 </style>
