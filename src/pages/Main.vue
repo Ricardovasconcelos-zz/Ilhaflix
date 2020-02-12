@@ -2,17 +2,20 @@
   <div id="app">
     <Header />
     <NextReleases />
+    <NewMovies />
   </div>
 </template>
 
 <script>
 import Header from "../components/Header";
 import NextReleases from "../components/NextReleases";
+import NewMovies from "../components/NewMovies";
 export default {
   name: "App",
   components: {
     Header,
-    NextReleases
+    NextReleases,
+    NewMovies
   }
 };
 </script>

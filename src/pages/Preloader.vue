@@ -4,13 +4,13 @@
       <div class="divImg">
         <img class="logoPreloader" :src="image" />
       </div>
-      <RollerLoader :color="'#E50931'" />
+      <RingLoader :color="'#E50931'" />
     </div>
   </transition>
 </template>
 
 <script>
-import RollerLoader from "@bit/joshk.vue-spinners-css.roller-loader";
+import RingLoader from "@bit/joshk.vue-spinners-css.ring-loader";
 
 import image from "../assets/logo-big.png";
 export default {
@@ -25,7 +25,7 @@ export default {
     if (this.show) this.showToggle();
   },
   components: {
-    RollerLoader
+    RingLoader
   },
   methods: {
     showToggle() {

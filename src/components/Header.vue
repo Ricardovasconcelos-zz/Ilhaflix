@@ -240,10 +240,12 @@ input[type="text"]:focus {
     padding-top: 30px;
   }
 }
-
-@media only screen and (min-width: 300px) {
+@media only screen and (max-width: 320px) {
   .logoHeader {
     margin-left: 0px;
+  }
+  #selections {
+    padding-top: 60px;
   }
 }
 </style>
