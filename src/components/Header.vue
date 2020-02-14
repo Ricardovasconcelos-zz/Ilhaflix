@@ -1,6 +1,6 @@
 <template>
   <div id="header">
-    <img class="logoHeader" :src="image" />
+    <img class="logoHeader" :src="image" v-on:click="NavigateMain" />
     <nav role="navigation">
       <ul>
         <li id="selections">
@@ -9,7 +9,7 @@
             <v-icon name="sort-down" scale="1" color="#e5e5e5" />
           </a>
           <ul class="dropdown">
-            <li>
+            <li v-on:click="NavigateMain">
               <a>Início</a>
             </li>
             <li>
@@ -26,7 +26,7 @@
             </li>
           </ul>
         </li>
-        <li class="items">Início</li>
+        <li class="items" v-on:click="NavigateMain">Início</li>
         <li class="items">Séries</li>
         <li class="items">Filmes</li>
         <li class="items">Mais recentes</li>
@@ -59,6 +59,11 @@ export default {
   },
   components: {
     "v-icon": Icon
+  },
+  methods: {
+    NavigateMain() {
+      this.$router.push({ name: "Main" });
+    }
   }
 };
 </script>
@@ -75,6 +80,9 @@ export default {
 .logoHeader {
   margin-left: 30px;
 }
+.logoHeader:hover {
+  cursor: pointer;
+}
 nav {
   width: 70vw;
   color: white;
@@ -86,7 +94,6 @@ ul {
   margin: 0;
   padding-left: 0;
 }
-
 li {
   color: #fff;
   display: block;
@@ -98,12 +105,10 @@ li {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 13.5px;
 }
-
 li a {
   color: #fff;
   cursor: default;
 }
-
 li:hover {
   cursor: pointer;
 }
@@ -120,7 +125,6 @@ ul li ul {
   left: 0;
   display: none;
 }
-
 ul li ul li {
   clear: both;
   width: 100%;
@@ -132,7 +136,6 @@ ul li ul li {
   opacity: 0;
   height: 0;
 }
-
 #options {
   font-size: 14px;
   color: #e5e5e5;

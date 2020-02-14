@@ -2,13 +2,13 @@
   <div id="app">
     <Header />
     <NextReleases />
-    <Movies typeMovie="war" typeDescription="Recomendados" />
-    <Movies typeMovie="harry" typeDescription="Populares na Ilhaflix" />
-    <Movies typeMovie="kids" typeDescription="Em alta" />
-    <Movies typeMovie="batman" typeDescription="Ficção" />
-    <Movies typeMovie="game&type=series" typeDescription="Aventura" />
-    <Movies typeMovie="brain" typeDescription="Para todas idades" />
-    <Movies typeMovie="all&type=series" typeDescription="Família" />
+    <Movies typeMovie="s=war" typeDescription="Recomendados" />
+    <Movies typeMovie="s=harry" typeDescription="Populares na Ilhaflix" />
+    <Movies typeMovie="s=kids" typeDescription="Em alta" />
+    <Movies typeMovie="s=batman" typeDescription="Ficção" />
+    <Movies typeMovie="s=game&type=series" typeDescription="Aventura" />
+    <Movies typeMovie="s=brain" typeDescription="Para todas idades" />
+    <Movies typeMovie="s=all&type=series" typeDescription="Família" />
     <h4>Ilhaflix - Ricardo Vasconcelos</h4>
   </div>
 </template>

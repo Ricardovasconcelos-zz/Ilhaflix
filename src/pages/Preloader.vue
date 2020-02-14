@@ -4,14 +4,13 @@
       <div class="divImg">
         <img class="logoPreloader" :src="image" />
       </div>
-      <RingLoader :color="'#E50931'" />
+      <Spinner />
     </div>
   </transition>
 </template>
 
 <script>
-import RingLoader from "@bit/joshk.vue-spinners-css.ring-loader";
-
+import Spinner from "../components/Spinner";
 import image from "../assets/logo-big.png";
 export default {
   name: "Preloader",
@@ -25,7 +24,7 @@ export default {
     if (this.show) this.showToggle();
   },
   components: {
-    RingLoader
+    Spinner
   },
   methods: {
     showToggle() {

@@ -2,6 +2,9 @@
   <div id="newMovies">
     <h1>{{ typeDescription }}</h1>
     <div id="slide">
+      <div v-show="showLoading" id="loadingMovie">
+        <Spinner />
+      </div>
       <carousel
         :per-page="4"
         :navigate-to="0"
@@ -10,9 +13,9 @@
         :navigationEnabled="true"
         :navigationClickTargetSize="9"
       >
-        <slide v-bind:key="movie.imdbID" v-for="movie in movies" id="divs">
-          <div>
-            <img :src="movie.Poster" id="imagem" alt />
+        <slide v-bind:key="movie.imdbID" v-for="movie in movies" id="movieDiv">
+          <div v-on:click="showDetail(movie.imdbID)">
+            <img :src="movie.Poster" id="imagem" />
           </div>
         </slide>
       </carousel>
@@ -22,7 +25,7 @@
 
 <script>
 import { Carousel, Slide } from "vue-carousel";
-
+import Spinner from "../components/Spinner";
 import { Movies } from "../services/api";
 
 export default {
@@ -30,19 +33,32 @@ export default {
 
   data() {
     return {
-      movies: []
+      movies: [],
+      showLoading: true
     };
   },
   props: ["typeMovie", "typeDescription"],
   components: {
     Carousel,
-    Slide
+    Slide,
+    Spinner
   },
-
   async mounted() {
-    const response = await Movies(this.typeMovie).get();
-
-    this.movies = response.data.Search;
+    this.showLoading = true;
+    try {
+      const response = await Movies(this.typeMovie).get();
+      this.movies = response.data.Search;
+    } catch (error) {
+      console.error(error);
+    } finally {
+      this.showLoading = false;
+    }
+  },
+  methods: {
+    showDetail(_id) {
+      console.log(_id);
+      this.$router.push({ name: "Detail", params: { id: _id } });
+    }
   }
 };
 </script>
@@ -52,6 +68,9 @@ export default {
   height: 100%;
   text-align: center;
   margin: auto;
+}
+#buttonNexts {
+  color: #f1f;
 }
 #newMovies h1 {
   color: #cacaca;
@@ -65,7 +84,12 @@ export default {
   justify-content: flex-start;
   align-items: center;
 }
-#divs {
+#loadingMovie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#movieDiv {
   margin-top: 23px;
   padding-left: 20px;
   flex: 1;
@@ -81,6 +105,11 @@ export default {
   transform: scale(1.1);
   cursor: pointer;
 }
+.VueCarousel-navigation-button[data-v-453ad8cd] {
+  color: #e9e9e9 !important;
+  outline: none !important;
+}
+
 @media only screen and (max-width: 599px) {
   #imagem {
     height: 150px;

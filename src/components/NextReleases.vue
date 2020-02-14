@@ -28,9 +28,7 @@ import Icon from "vue-awesome/components/Icon";
 export default {
   name: "NextRealeses",
   data() {
-    return {
-      volume: false
-    };
+    return {};
   },
   components: {
     "v-icon": Icon
