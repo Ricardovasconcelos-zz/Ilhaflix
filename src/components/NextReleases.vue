@@ -7,8 +7,9 @@
     <div class="container">
       <h1>O Código Bill Gates</h1>
       <p>
-        Bill Gates fala sobre a missão de vida ou morte para melhorar as condições
-        de saneamento no mundo em desenvolvimento. E suas irmãs relembra a infância com ele.
+        Bill Gates fala sobre a missão de vida ou morte para melhorar as
+        condições de saneamento no mundo em desenvolvimento. E suas irmãs
+        relembra a infância com ele.
       </p>
       <button id="buttonPlay">
         <v-icon name="play" scale="1" id="iconMain" color="#e5e5e5" />
@@ -26,8 +27,10 @@
 import Icon from "vue-awesome/components/Icon";
 export default {
   name: "NextRealeses",
-  data() { 
-    return {};
+  data() {
+    return {
+      volume: false
+    };
   },
   components: {
     "v-icon": Icon
@@ -104,6 +107,7 @@ button span {
   width: 190px;
   height: 30px;
 }
+
 @media only screen and (max-width: 900px) {
   .wrap {
     height: 50vh;

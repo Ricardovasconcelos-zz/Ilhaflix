@@ -53,7 +53,8 @@ export default {
   name: "Header",
   data() {
     return {
-      image: image
+      image: image,
+      inputSearch: ""
     };
   },
   components: {

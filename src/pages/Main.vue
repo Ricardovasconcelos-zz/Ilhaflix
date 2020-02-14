@@ -2,20 +2,27 @@
   <div id="app">
     <Header />
     <NextReleases />
-    <NewMovies />
+    <Movies typeMovie="war" typeDescription="Recomendados" />
+    <Movies typeMovie="harry" typeDescription="Populares na Ilhaflix" />
+    <Movies typeMovie="kids" typeDescription="Em alta" />
+    <Movies typeMovie="batman" typeDescription="Ficção" />
+    <Movies typeMovie="game&type=series" typeDescription="Aventura" />
+    <Movies typeMovie="brain" typeDescription="Para todas idades" />
+    <Movies typeMovie="all&type=series" typeDescription="Família" />
+    <h4>Ilhaflix - Ricardo Vasconcelos</h4>
   </div>
 </template>
 
 <script>
 import Header from "../components/Header";
 import NextReleases from "../components/NextReleases";
-import NewMovies from "../components/NewMovies";
+import Movies from "../components/Movies";
 export default {
   name: "App",
   components: {
     Header,
     NextReleases,
-    NewMovies
+    Movies
   }
 };
 </script>
@@ -30,5 +37,17 @@ export default {
 body {
   background-color: #141414;
   height: 100vh;
+}
+#app h4 {
+  color: #e9e9e9;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+@media only screen and (max-width: 599px) {
+  #app h4 {
+    font-size: 14px;
+  }
 }
 </style>
