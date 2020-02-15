@@ -1,10 +1,10 @@
 <template>
-  <div class="wrap">
-    <div class="bg-video">
+  <div class="nextReleasesContainer">
+    <div class="videoContainer">
       <video autoplay muted loop src="../assets/video.mp4"></video>
     </div>
 
-    <div class="container">
+    <div class="containerReleases">
       <h1>O Código Bill Gates</h1>
       <p>
         Bill Gates fala sobre a missão de vida ou morte para melhorar as
@@ -35,33 +35,32 @@ export default {
   }
 };
 </script>
-<style>
-.wrap {
+<style >
+.nextReleasesContainer {
   width: 100%;
-  height: 80vh;
+  height: 500px;
   position: relative;
   background: #1414147e;
   display: flex;
   align-items: center;
 }
-.wrap > .bg-video {
+.nextReleasesContainer > .videoContainer {
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
   width: 100%;
-  height: 100%;
+  height: 99%;
   overflow: hidden;
 }
-.wrap > .bg-video > video {
+.nextReleasesContainer > .videoContainer > video {
   width: 100%;
 }
-.container {
+.containerReleases {
   width: 500px;
   margin-left: 40px;
-  position: relative;
 }
-.container h1 {
+.containerReleases h1 {
   color: #ffffff;
   text-shadow: black 0.1em 0.1em 0.2em;
   font-size: 50px;
@@ -69,7 +68,7 @@ export default {
   margin-bottom: 30px;
   position: relative;
 }
-.container p {
+.containerReleases p {
   color: #e9e9e9;
   font-family: Arial, Helvetica, sans-serif;
   text-shadow: #e9e9e9 0em 0em 0em;
@@ -77,7 +76,7 @@ export default {
   margin-bottom: 30px;
   text-align: justify;
 }
-button {
+.containerReleases button {
   border: none;
   background: rgba(78, 78, 78, 0.562);
   color: #e9e9e9;
@@ -86,14 +85,14 @@ button {
   text-align: center;
   transition: transform 0.5s;
 }
-button:hover {
+.containerReleases button:hover {
   border: none;
   background: rgb(255, 255, 255);
   color: #141414;
   transform: scale(1.1);
   cursor: pointer;
 }
-button span {
+.containerReleases button span {
   padding-left: 10px;
 }
 #buttonPlay {
@@ -107,28 +106,28 @@ button span {
 }
 
 @media only screen and (max-width: 900px) {
-  .wrap {
+  .nextReleasesContainer {
     height: 50vh;
   }
 }
 @media only screen and (max-width: 790px) {
-  .container h1 {
+  .containerReleases h1 {
     font-size: 40px;
   }
 }
 @media only screen and (max-width: 699px) {
-  .wrap {
+  .nextReleasesContainer {
     height: 40vh;
   }
-  .container p {
+  .containerReleases p {
     font-size: 13px;
   }
 }
 @media only screen and (max-width: 599px) {
-  .container {
+  .containerReleases {
     width: 400px;
   }
-  .container p {
+  .containerReleases p {
     font-size: 13px;
   }
 
@@ -140,15 +139,15 @@ button span {
   }
 }
 @media only screen and (max-width: 470px) {
-  .container {
+  .containerReleases {
     width: 350px;
     margin-left: 20px;
   }
-  .container h1 {
+  .containerReleases h1 {
     font-size: 30px;
   }
 
-  .container p {
+  .containerReleases p {
     font-size: 11px;
   }
 
@@ -158,19 +157,19 @@ button span {
   #buttonInfo {
     font-size: 12px;
   }
-  .wrap {
+  .nextReleasesContainer {
     height: 33vh;
   }
 }
 @media only screen and (max-width: 399px) {
-  .container {
+  .containerReleases {
     width: 270px;
   }
-  .container h1 {
+  .containerReleases h1 {
     font-size: 17px;
   }
 
-  .container p {
+  .containerReleases p {
     font-size: 8px;
   }
   button span {

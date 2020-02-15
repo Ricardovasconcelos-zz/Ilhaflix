@@ -1,7 +1,7 @@
 <template>
   <div id="newMovies">
-    <h1>{{ typeDescription }}</h1>
     <div id="slide">
+      <h1>{{ typeDescription }}</h1>
       <div v-show="showLoading" id="loadingMovie">
         <Spinner />
       </div>
@@ -13,7 +13,11 @@
         :navigationEnabled="true"
         :navigationClickTargetSize="9"
       >
-        <slide v-bind:key="movie.imdbID" v-for="movie in movies" id="movieDiv">
+        <slide
+          v-bind:key="movie.imdbID + removeIdDuplicate()"
+          v-for="movie in movies"
+          id="movieDiv"
+        >
           <div v-on:click="showDetail(movie.imdbID)">
             <img :src="movie.Poster" id="imagem" />
           </div>
@@ -34,7 +38,8 @@ export default {
   data() {
     return {
       movies: [],
-      showLoading: true
+      showLoading: true,
+      paginationButtons: false
     };
   },
   props: ["typeMovie", "typeDescription"],
@@ -56,15 +61,23 @@ export default {
   },
   methods: {
     showDetail(_id) {
-      console.log(_id);
       this.$router.push({ name: "Detail", params: { id: _id } });
+    },
+    removeIdDuplicate() {
+      return String(Math.random());
     }
   }
 };
 </script>
 <style>
-#newMovies {
+#slide {
   width: 90%;
+  height: 100%;
+  text-align: center;
+  margin: auto;
+}
+#newMovies {
+  width: 100%;
   height: 100%;
   text-align: center;
   margin: auto;
@@ -114,6 +127,11 @@ export default {
   #imagem {
     height: 150px;
     width: 100px;
+  }
+  #newMovies h1 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
   }
 }
 </style>

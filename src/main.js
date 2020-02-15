@@ -4,7 +4,9 @@ import App from "./App.vue";
 import "vue-awesome/icons/flag";
 import "vue-awesome/icons";
 import router from "./router";
+import VueYoutube from "vue-youtube";
 
+Vue.use(VueYoutube);
 Vue.config.productionTip = false;
 new Vue({
   router,
