@@ -5,8 +5,8 @@
     <Movies typeMovie="s=avengers" typeDescription="Populares na Ilhaflix" />
     <Movies typeMovie="s=harry" typeDescription="Recomendados" />
     <Movies typeMovie="s=fast" typeDescription="Em alta" />
-    <Movies typeMovie="s=super" typeDescription="Ficção" />
-    <Movies typeMovie="s=game" typeDescription="Aventura" />
+    <Movies typeMovie="s=super" typeDescription="Aventura" />
+    <Movies typeMovie="s=game" typeDescription="Ficção" />
     <Movies typeMovie="s=brain" typeDescription="Para todas idades" />
     <Movies typeMovie="s=all" typeDescription="Família" />
     <h4>Ilhaflix - Ricardo Vasconcelos</h4>

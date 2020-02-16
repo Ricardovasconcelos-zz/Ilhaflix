@@ -21,7 +21,7 @@
             <li>
               <a>Mais recentes</a>
             </li>
-            <li>
+            <li v-on:click="NavigateMyList">
               <a>Minha lista</a>
             </li>
           </ul>
@@ -30,7 +30,7 @@
         <li class="items">Séries</li>
         <li class="items">Filmes</li>
         <li class="items">Mais recentes</li>
-        <li class="items">Minha lista</li>
+        <li class="items" v-on:click="NavigateMyList">Minha lista</li>
         <li></li>
       </ul>
     </nav>
@@ -63,6 +63,9 @@ export default {
   methods: {
     NavigateMain() {
       this.$router.push({ name: "Main" });
+    },
+    NavigateMyList() {
+      this.$router.push({ name: "MyList" });
     }
   }
 };
