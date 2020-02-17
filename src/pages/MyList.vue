@@ -177,4 +177,20 @@ export default {
   width: 50%;
   margin-left: 2px;
 }
+@media only screen and (max-width: 999px) {
+  #myListContent {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+}
+@media only screen and (max-width: 730px) {
+  #myListContent {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+  }
+}
 </style>
