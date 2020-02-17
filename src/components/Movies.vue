@@ -19,7 +19,7 @@
           id="movieDiv"
         >
           <div v-on:click="showDetail(movie.imdbID)">
-            <img :src="movie.Poster" id="imagem" />
+            <img :src="movie.Poster" id="imagemPosterSlide" />
           </div>
         </slide>
       </carousel>
@@ -107,14 +107,14 @@ export default {
   padding-left: 20px;
   flex: 1;
 }
-#imagem {
+#imagemPosterSlide {
   border-radius: 15px;
   transition: 0.5s;
   height: 300px;
   margin-bottom: 20px;
   width: 200px;
 }
-#imagem:hover {
+#imagemPosterSlide:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -124,7 +124,7 @@ export default {
 }
 
 @media only screen and (max-width: 599px) {
-  #imagem {
+  #imagemPosterSlide {
     height: 150px;
     width: 100px;
   }

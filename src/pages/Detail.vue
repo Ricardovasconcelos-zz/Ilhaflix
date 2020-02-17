@@ -23,7 +23,7 @@
         </div>
         <div id="descriptionsContainer">
           <div id="movieTitle">
-            <h1>{{movie.Title}}</h1>
+            <h1>{{ movie.Title }}</h1>
           </div>
           <div id="spinnerLoading">
             <div v-show="showLoading" id="loadingSpinner">
@@ -33,7 +33,7 @@
           <div id="movieSynopsis">
             <p>{{ movie.Plot }}</p>
           </div>
-          <button id="myList">
+          <button id="myList" v-on:click="addToMyList">
             Adicionar a minha lista
             <v-icon name="list-ul" scale="1.2" color="#e5e5e5" id="playIcon" />
           </button>
@@ -61,7 +61,7 @@
             </p>
             <p>
               Produção
-              <span>{{movie.Production}}</span>
+              <span>{{ movie.Production }}</span>
             </p>
           </div>
         </div>
@@ -76,6 +76,7 @@ import { Movies } from "../services/api";
 import Icon from "vue-awesome/components/Icon";
 import { Trailer } from "../services/trailer";
 import Spinner from "../components/Spinner";
+
 export default {
   name: "Detail",
   data() {
@@ -102,6 +103,22 @@ export default {
       console.log(error);
     } finally {
       this.showLoading = false;
+    }
+  },
+  methods: {
+    addToMyList() {
+      this.$store.commit("addToMyList", this.movie);
+      this.showToast();
+    },
+    showToast() {
+      this.$toast.open({
+        message: "Adicionado em minha lista",
+        type: "success",
+        duration: 5000,
+        dismissible: true,
+        queue: true,
+        position: "top-right"
+      });
     }
   }
 };
